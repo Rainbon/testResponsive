@@ -6,7 +6,7 @@
 * [腻子 抹平浏览器的差异性](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills)
 * [对不确定的元素主动检测兼容性](https://modernizr.com/download?setclasses)
 * [查看浏览器的兼容性情况](https://caniuse.com/)
-* [npm](https://www.npmjs.com/)
+* [npm 查看npm安装的包信息](https://www.npmjs.com/)
 * [在多设备上调试实现同步的效果](https://www.browsersync.io/)
 * [http-server服务部署](https://github.com/indexzero/http-server)
 
@@ -27,6 +27,25 @@ rem 的出现再也不用担心还要根据父级元素的 font-size 计算 em �
 
 #### 注意事项
 
-需要注意的是，为了兼容不支持 rem 的浏览器，我们需要在各个使用了 rem 地方前面写上对应的 px 值，这样不支持的浏览器可以优雅降级。兼容性详情。
+一般来说，如果需要统一字体大小，建议用 rem，但有些局部，相对动态需要根据父元素字体来设置大小的，会选用 em。另外还有一些比较特殊的情况，比如需要与固定像素的图片配合布局等，那就要用到 px 了。
 
-选择使用什么字体单位主要由你的项目来决定，如果你的用户群都使用最新版的浏览器，那推荐使用 rem，如果要考虑兼容性，那就使用 px，或者两者同时使用。
+### 媒体查询
+
+* [only screen参考文章](http://www.jianshu.com/p/2dfa5bab1ef1)
+* [媒体查询中only not的理解](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries)
+
+### 从第一个li的兄弟元素开始
+
+像头部导航 左右两边没有竖线 其他都用竖线隔开就可以使用这种方法实现：
+
+``````
+header .top ul li + li { /* 从第一个li的兄弟元素开始 及第二个li开始执行该代码*/
+    border-left: 1px solid #999;
+    margin-left: -3px;
+}
+``````
+
+### calc的使用场景
+
+* [calc的使用介绍 例子](http://www.w3cplus.com/css3/how-to-use-css3-calc-function.html)
+* [box-sizing和calc的比较](http://www.w3cplus.com/css3/imitating-calc-fallback-fixed-width-sidebar-in-responsive-layout.html)

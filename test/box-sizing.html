@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>box-sizing</title>
+    <style>
+        .container:after, .container:before {
+            content: "";
+            display: table;
+        }
+
+        .container:after {
+            clear: both;
+            overflow: hidden;
+        }
+
+        .container {
+            zoom: 1;
+        }
+
+        .container, .content, .sidebar {
+            box-sizing: border-box;
+            color: #fff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 80em; /* 1280 */
+            padding: 2.5em; /* 40 */
+            background: #eee;
+        }
+
+        .content, .sidebar {
+            padding: 10em 1.25em;
+        }
+
+        .content {
+            width: 80%; /* 960 */
+            float: left;
+            background: #8ac233;
+        }
+
+        .sidebar {
+            width: 16.666%; /* 200 */
+            float: right;
+            background: #8ac233;
+        }
+
+        @media only screen and (max-width: 40em) /* 640 */ {
+            .content, .sidebar {
+                width: 100%;
+                float: none;
+            }
+
+            .sidebar {
+                margin-top: 1.25em; /* 20 */
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">Content</div>
+    <div class="sidebar">Sidebar</div>
+</div>
+</body>
+</html>
+
