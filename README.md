@@ -26,6 +26,13 @@ rem 的出现再也不用担心还要根据父级元素的 font-size 计算 em �
 比如默认的 html font-size=16px，那么想设置 12px 的文字就是：12÷16=0.75(rem)
 
 #### 注意事项
+谷歌浏览器默认字体大小最小是12px,如果为了计算方便而将html根元素字体设置为10px,即html{font-size:10px;}
+
+此时子元素使用rem时来设置字体大小以及height\width等要注意:
+
+1. 当字体大小小于12px时浏览器一律显示12px,如p{font-size:0.9rem;}，实际浏览器将p元素内字体大小以1.2rem显示
+
+2. 当rem设置height\width时rem和px转换比是1：12，并非1:10。原因：谷歌浏览器默认字体大小最小是12px
 
 一般来说，如果需要统一字体大小，建议用 rem，但有些局部，相对动态需要根据父元素字体来设置大小的，会选用 em。另外还有一些比较特殊的情况，比如需要与固定像素的图片配合布局等，那就要用到 px 了。
 
@@ -49,3 +56,39 @@ header .top ul li + li { /* 从第一个li的兄弟元素开始 及第二个li�
 
 * [calc的使用介绍 例子](http://www.w3cplus.com/css3/how-to-use-css3-calc-function.html)
 * [box-sizing和calc的比较](http://www.w3cplus.com/css3/imitating-calc-fallback-fixed-width-sidebar-in-responsive-layout.html)
+
+### 多余的文字 隐藏 不换行 省略号 显示
+
+``````
+p{
+    display: inline-block;
+    width: 200px;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+``````
+
+### 清除浮动的实用方法
+
+最实用的方法
+
+``````
+
+.clearfix:before,.clearfix:after{
+    content: '';
+    display: table;
+}
+.clearfix:after{
+    clear: both;
+}
+``````
+
+### grayscale灰度级
+
+``````
+ -webkit-filter: grayscale(100%); /*CSS3 grayscale滤镜图片变黑白*/
+ filter: grayscale(100%);
+``````

@@ -2,13 +2,7 @@
 
 /*基本默认值*/
 
-/*谷歌浏览器默认字体大小最小是12px,如果为了计算方便而将html根元素字体设置为10px,即html{font-size:10px;}
-
-　　此时子元素使用rem时来设置字体大小以及height\width等要注意:
-
-　　　　1.当字体大小小于12px时浏览器一律显示12px,如p{font-size:0.9rem;}，实际浏览器将p元素内字体大小以1.2rem显示
-
-　　　　2.当rem设置height\width时rem和px转换比是1：12，并非1:10。原因：谷歌浏览器默认字体大小最小是12px*/
+/**/
 
 html {
     font-size: 62.5%;  /* 10/16*100%  默认font-size=16px rem是相对根元素html的值*/

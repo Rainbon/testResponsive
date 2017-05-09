@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clearfix</title>
+    <style>
+        .content{
+            background-color: #8ac233;
+            padding: 10px;
+            /*float: left;*/
+        }
+        .first{
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: #cccccc;
+        }
+        .second{
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: #00aaee;
+        }
+        .clearfix:before,.clearfix:after{
+            content: '';
+            display: table;
+        }
+        .clearfix:after{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<div class="content clearfix">
+    <div class="first">first</div>
+    <div class="second">second</div>
+</div>
+</body>
+</html>
