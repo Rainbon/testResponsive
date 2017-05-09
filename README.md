@@ -92,3 +92,41 @@ p{
  -webkit-filter: grayscale(100%); /*CSS3 grayscale滤镜图片变黑白*/
  filter: grayscale(100%);
 ``````
+
+### ::section选择器匹配被用户选取的部分
+
+只能向 ::selection 选择器应用少量 CSS 属性：color、background、cursor 以及 outline。
+
+``````
+::selection{
+    color:#ff0000;
+}
+
+::-moz-selection{
+    color:#ff0000;
+}
+``````
+
+
+### 弹性图片 picture的使用
+使用polyfill(picturefill)是浏览器兼容picture标签
+
+* [picture元素处理响应式图片](http://www.w3cplus.com/html5/quick-tip-how-to-use-html5-picture-for-responsive-images.html)
+* [响应式图像之srcset和sizes属性](http://www.jiangweishan.com/article/response-srcset-sizes.html)
+
+
+### 在线创建矢量图形
+* [editor](http://editor.method.ac/)
+* [icomoon](https://icomoon.io/)
+* [对svg的压缩](http://iconizr.com/)
+* [对png的压缩](https://tinypng.com/)
+
+### 原型设计工具
+* [Axure中文网](https://www.axure.com.cn)
+* [Axure英文网](https://www.axure.com/)
+* [Sketch](http://www.sketchcn.com/)
+
+### 交互设计
+* [Flinto for Mac](https://www.flinto.com/)
+* [Principle](http://principleformac.com/)
+

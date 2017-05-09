@@ -11,7 +11,7 @@ html {
 
 ::selection {       /*设置文字被选中时的背景颜色*/
     background-color: #b3d4fc;
-    text-shadow: none;
+    /*text-shadow: none;*/
 }
 
 ul {
